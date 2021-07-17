@@ -9,7 +9,7 @@ public class Input {
     String className = object.getClass().getSimpleName().toLowerCase();
     String chapter = object.getClass().getPackage().toString().split("\\.")[1].replace("chap", "");
 
-    return new File("./src/goo/chap" + chapter + "/input/" +  className + ".txt");
+    return new File("./src/strategies/chap" + chapter + "/input/" +  className + ".txt");
   }
 
   public static Scanner sc(Object object) {
