@@ -4,12 +4,13 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.Stack;
+import util.Input;
 
 public class Fence {
 
   public static void main(String[] args) throws Exception{
-    File file = new File("./src/goo/chap7/input/fence.txt");
-    Scanner sc = new Scanner(file);
+    Scanner sc = Input.sc(new Fence());
 
     int C = sc.nextInt();
     while (C-- > 0) {
@@ -18,7 +19,7 @@ public class Fence {
       for(int i = 0; i < N; i++){
         board.add(sc.nextInt());
       }
-      System.out.println(fence(board));
+      System.out.println(solveStack(board));
     }
   }
 
@@ -51,6 +52,29 @@ public class Fence {
       answer = Math.max(answer, height * (right - left + 1));
     }
     return answer;
+  }
+
+  private static int solveStack(List<Integer> board){
+    Stack<Integer> remaining = new Stack<>();
+    remaining.add(0);
+    int ret = 0;
+
+    for(int i = 0; i < board.size(); i++){
+      while(!remaining.isEmpty() && board.get(remaining.peek()) >= board.get(i)){
+        int j = remaining.peek();
+        remaining.pop();
+        int width = -1;
+
+        if(remaining.isEmpty())
+          width = i;
+        else
+          width = (i - remaining.peek() - 1);
+
+        ret = Math.max(ret, board.get(j) * width);
+      }
+      remaining.add(i);
+    }
+    return ret;
   }
 
 }
