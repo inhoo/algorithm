@@ -26,8 +26,7 @@ public class BOJ1806 {
     while (start <= n) {
       int partialSum = arr[end] - arr[start];
       if (partialSum >= k) {
-        int distance = end - start;
-        min = Math.min(min, distance);
+        min = Math.min(min, end - start);
         start++;
       } else {
         end++;
