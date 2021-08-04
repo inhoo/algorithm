@@ -5,7 +5,7 @@ package structure.tree;
 import java.io.*;
 import java.util.*;
 
-public class Main {
+public class BOJ1167 {
 
   private static int maxNode = 0;
   private static int max = 0;
