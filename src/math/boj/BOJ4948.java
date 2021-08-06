@@ -5,7 +5,7 @@ package math.boj;
 import java.io.*;
 import java.util.Arrays;
 
-public class Main {
+public class BOJ4948 {
   private static final int MAX = 123456 * 2;
   private static boolean[] prime = new boolean[MAX + 1];
 
