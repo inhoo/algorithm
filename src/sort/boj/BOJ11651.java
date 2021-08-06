@@ -1,11 +1,12 @@
 package sort.boj;
 
-// [좌표 정렬하기] https://www.acmicpc.net/problem/11650
-
 import java.io.*;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.StringTokenizer;
 
-public class BOJ11650 {
+public class BOJ11651 {
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
@@ -19,7 +20,7 @@ public class BOJ11650 {
       points.add(new Point(x, y));
     }
     Collections.sort(points);
-    for (Point point : points) {
+    for(Point point : points){
       bw.write(point + "\n");
     }
     bw.flush();
@@ -37,12 +38,12 @@ public class BOJ11650 {
 
     @Override
     public int compareTo(Point o) {
-      if (x > o.x)
+      if (y > o.y)
         return 1;
-      else if (x < o.x)
+      else if (y < o.y)
         return -1;
       else {
-        return Integer.compare(y, o.y);
+        return Integer.compare(x, o.x);
       }
     }
 
@@ -51,4 +52,7 @@ public class BOJ11650 {
       return x + " " + y;
     }
   }
+
 }
+
+
