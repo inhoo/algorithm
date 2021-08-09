@@ -1,5 +1,7 @@
 package divideandconquer.boj;
 
+// [행렬 제곱] https://www.acmicpc.net/problem/10830
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
