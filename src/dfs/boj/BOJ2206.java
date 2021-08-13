@@ -12,8 +12,8 @@ public class BOJ2206 {
   private static int n, m;
   private static boolean[][] map;
 
-  private static int[] dy = {-1, 0, 1, 0};
-  private static int[] dx = {0, -1, 0, 1};
+  private static final int[] dy = {-1, 0, 1, 0};
+  private static final int[] dx = {0, -1, 0, 1};
 
   public static void main(String[] args) throws IOException {
     BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
